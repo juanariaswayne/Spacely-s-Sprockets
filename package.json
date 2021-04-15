@@ -1,0 +1,46 @@
+{
+  "name": "spacelys-sprockets",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest --config jestconfig.json",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p tsconfig.json",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juanariaswayne/Spacely-s-Sprockets.git"
+  },
+  "author": "Juan Arias <juanariasmail@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/juanariaswayne/Spacely-s-Sprockets/issues"
+  },
+  "homepage": "https://github.com/juanariaswayne/Spacely-s-Sprockets#readme",
+  "engines": {
+    "node": ">= 8.0.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.22",
+    "jest": "^26.6.3",
+    "prettier": "^2.2.1",
+    "ts-jest": "^26.5.4",
+    "tslint": "^6.1.3",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^4.2.4"
+  },
+  "files": [
+    "lib/**/*"
+  ],
+  "dependencies": {
+    "rxjs": "^6.6.7"
+  }
+}
